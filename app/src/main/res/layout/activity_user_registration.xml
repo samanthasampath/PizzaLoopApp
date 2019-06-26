@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/backnewl"
+    tools:context=".UserRegistration">
+
+    <ImageView
+        android:id="@+id/imglogo1"
+        android:layout_width="207dp"
+        android:layout_height="176dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="10dp"
+        app:srcCompat="@mipmap/logonew" />
+
+    <EditText
+        android:id="@+id/etusername"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_below="@id/imglogo1"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:hint="Name*"
+        android:inputType="textPersonName"
+        android:visibility="visible"
+        android:background="@drawable/rounded_background"
+        android:gravity="center"/>
+
+    <EditText
+        android:id="@+id/etphone"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_below="@id/etusername"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:hint="Tel No*"
+        android:inputType="phone"
+        android:visibility="visible"
+        android:background="@drawable/rounded_background"
+        android:gravity="center" />
+
+    <EditText
+        android:id="@+id/etpass"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_below="@id/etphone"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:hint="Password*"
+        android:inputType="textPassword"
+        android:visibility="visible"
+        android:background="@drawable/rounded_background"
+        android:gravity="center" />
+
+    <EditText
+        android:id="@+id/etconfpass"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_below="@id/etpass"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:hint="Confirm Password*"
+        android:inputType="textPassword"
+        android:visibility="visible"
+        tools:visibility="visible"
+        android:background="@drawable/rounded_background"
+        android:gravity="center"/>
+
+    <Button
+        android:id="@+id/btnreg"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:text="Sign Up"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="15dp"
+        android:layout_below="@id/etconfpass"
+        android:background="@drawable/rounded_background"/>
+
+    <TextView
+        android:id="@+id/tvsign"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:text="Already sign up?Log in..."
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="30dp"
+        android:layout_below="@id/btnreg"/>
+
+</RelativeLayout>

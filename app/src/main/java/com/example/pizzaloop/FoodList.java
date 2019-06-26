@@ -37,21 +37,31 @@ public class FoodList extends AppCompatActivity {
         setContentView(R.layout.activity_food_list);
         listview = (ListView)findViewById(R.id.listView);
 
-        ArrayAdapter<String> adapter=new ArrayAdapter<String>(this,
+        ArrayAdapter<String> adapter=new ArrayAdapter<>(this,
                 android.R.layout.activity_list_item);
+
         listview.setAdapter(adapter);
+
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if(position>=0) {
-                    Intent intent = new Intent(view.getContext(), Details.class);
-                    startActivityForResult(intent, 0);
-                }
+                Object o = listview.getItemAtPosition(position);
+                Pizza pizza = (Pizza) o;
+                Intent intent = new Intent(view.getContext(), Details.class);
+                intent.putExtra("name",pizza.getName());
+                intent.putExtra("details",pizza.getDetails());
+                intent.putExtra("price",pizza.getPrice());
+                intent.putExtra("imgurl",pizza.getImageURL());
+                startActivityForResult(intent, 0);
+
             }
         });
 
+
+
         RequestQueue queue = Volley.newRequestQueue(this);
-        String url ="http://192.168.8.179:8080/demo/all";
+        String url ="http://172.16.40.193:8080/demo/all";
 
         JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, url,
                 null, new HTTPResponseListner(), new HTTPErrorListner());
@@ -69,6 +79,7 @@ public class FoodList extends AppCompatActivity {
                     pizza.setName(object.get("name").toString());
                     pizza.setPrice(Float.parseFloat(object.get("price").toString()));
                     pizza.setImageURL(object.get("imageUrl").toString());
+                    pizza.setDetails(object.get("description").toString());
                     pizzaDetails.add(pizza);
 
                     ListView pizzaList = findViewById(R.id.listView);
@@ -100,13 +111,14 @@ public class FoodList extends AppCompatActivity {
             if(convertView == null) {
                 convertView = getLayoutInflater().from(getContext()).inflate(R.layout.list_item, parent, false);
             }
-            Pizza item = itemsList.get(position);
-            TextView tv = convertView.findViewById(R.id.tvdec);
-            TextView tvp = convertView.findViewById(R.id.tvpri);
-            ImageView iv = convertView.findViewById(R.id.ivpic);
-            Picasso.get().load(item.getImageURL()).into(iv);
-            tv.setText(item.getName());
-            tvp.setText("Rs." + item.getPrice());
+            Pizza food = itemsList.get(position);
+            TextView tvdes = convertView.findViewById(R.id.tvdec);
+            TextView tvpri = convertView.findViewById(R.id.tvpri);
+            ImageView ivpic = convertView.findViewById(R.id.ivpic);
+            //assign
+            Picasso.get().load(food.getImageURL()).into(ivpic);
+            tvdes.setText(food.getName());
+            tvpri.setText("Rs." + food.getPrice());
             return convertView;
         }
     }

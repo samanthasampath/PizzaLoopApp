@@ -1,9 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@mipmap/backnewl"
     tools:context=".Details">
 
-</android.support.constraint.ConstraintLayout>
+    <ImageView
+        android:id="@+id/ivimg"
+        android:layout_width="207dp"
+        android:layout_height="176dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="10dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/ivimg"
+        android:gravity="center"
+        android:id="@+id/layout"
+        android:padding="10dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:background="@drawable/rounded_background">
+
+        <TextView
+            android:id="@+id/tvname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_below="@id/ivimg"
+            android:textColor="#000000"
+            android:textSize="25dp"
+            android:visibility="visible"/>
+
+        <TextView
+            android:id="@+id/tvdes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_below="@id/tvname"
+            android:textColor="#000000"
+            android:layout_marginTop="10dp"
+            android:textSize="23dp"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/tvpris"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_below="@id/tvdes"
+            android:textColor="#000000"
+            android:layout_marginTop="10dp"
+            android:textSize="25dp"
+            android:visibility="visible"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnpurchase"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="50dp"
+        android:text="Buy Now"
+        android:gravity="center"
+        android:background="@drawable/rounded_background"/>
+
+    <Button
+        android:id="@+id/btncancel"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="40dp"
+        android:text="Cancel"
+        android:gravity="center"
+        android:background="@drawable/rounded_background"/>
+
+
+</RelativeLayout>

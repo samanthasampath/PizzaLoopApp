@@ -4,7 +4,7 @@
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF">
+    android:background="@drawable/rounded_background">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -29,7 +29,8 @@
             android:textColor="#000000"
             android:textSize="25dp"
             android:visibility="visible"
-            android:paddingLeft="15dp"/>
+            android:paddingLeft="15dp"
+            android:gravity="center"/>
 
         <TextView
             android:id="@+id/tvpri"
@@ -40,10 +41,11 @@
             android:layout_below="@id/tvdec"
             android:textAppearance="@style/TextAppearance.AppCompat"
             android:textColor="#000000"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="15dp"
             android:textSize="15dp"
             android:visibility="visible"
-            android:paddingLeft="15dp"/>
+            android:paddingLeft="15dp"
+            android:gravity="center"/>
     </RelativeLayout>
 
 </LinearLayout>

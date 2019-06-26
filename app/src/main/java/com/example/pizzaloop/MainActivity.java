@@ -30,7 +30,17 @@ public class MainActivity extends AppCompatActivity {
                 loadData(Name.getText().toString(),Password.getText().toString());
             }
         });
+
+        Signup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, UserRegistration.class));
+            }
+        });
     }
+
+
+
     public void loadData(String Name,String Password){
         if(Name.equals("a") && Password.equals("1")){
             Toast.makeText(MainActivity.this,"Username and password is correct", Toast.LENGTH_SHORT).show();
