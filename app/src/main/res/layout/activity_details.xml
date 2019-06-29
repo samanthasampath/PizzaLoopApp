@@ -59,10 +59,49 @@
             android:layout_marginTop="10dp"
             android:textSize="25dp"
             android:visibility="visible"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/ivimg"
+        android:gravity="center"
+        android:padding="10dp"
+        android:layout_gravity="center"
+        android:background="@drawable/rounded_background">
+
+        <TextView
+            android:id="@+id/tvnote"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvdes"
+            android:text="Quantity:"
+            android:textColor="#000000"
+            android:textSize="25dp"
+            android:visibility="visible" />
+
+        <EditText
+            android:id="@+id/etamount"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="number"
+            android:gravity="center"/>
+    </LinearLayout>
+        <TextView
+            android:id="@+id/tvnewpris"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_below="@id/tvdes"
+            android:textColor="#000000"
+            android:layout_marginTop="10dp"
+            android:textSize="25dp"
+            android:visibility="visible"/>
     </LinearLayout>
 
     <Button
-        android:id="@+id/btnpurchase"
+        android:id="@+id/btnAddCart"
         android:layout_width="140dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/layout"
@@ -70,12 +109,12 @@
         android:layout_alignParentLeft="true"
         android:layout_marginTop="40dp"
         android:layout_marginLeft="50dp"
-        android:text="Buy Now"
+        android:text="Add to Cart"
         android:gravity="center"
         android:background="@drawable/rounded_background"/>
 
     <Button
-        android:id="@+id/btncancel"
+        android:id="@+id/btnBack"
         android:layout_width="140dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/layout"
@@ -83,7 +122,7 @@
         android:layout_centerVertical="true"
         android:layout_marginRight="50dp"
         android:layout_marginTop="40dp"
-        android:text="Cancel"
+        android:text="Back"
         android:gravity="center"
         android:background="@drawable/rounded_background"/>
 

@@ -57,18 +57,15 @@ public class FoodList extends AppCompatActivity {
 
             }
         });
-
-
-
         RequestQueue queue = Volley.newRequestQueue(this);
-        String url ="http://172.16.40.193:8080/demo/all";
+        String url ="http://192.168.8.179:8080/demo/all";
 
         JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, url,
                 null, new HTTPResponseListner(), new HTTPErrorListner());
         queue.add(request);
     }
 
-    class HTTPResponseListner implements Response.Listener<JSONArray>{
+    private class HTTPResponseListner implements Response.Listener<JSONArray>{
         @Override
         public void onResponse(JSONArray jsonArray) {
             for(int i = 0; i < jsonArray.length(); i++) {
@@ -92,7 +89,7 @@ public class FoodList extends AppCompatActivity {
         }
     }
 
-    class HTTPErrorListner implements Response.ErrorListener {
+    private class HTTPErrorListner implements Response.ErrorListener {
         @Override
         public void onErrorResponse(VolleyError error) {
         }
