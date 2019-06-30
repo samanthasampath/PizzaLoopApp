@@ -23,7 +23,7 @@ public class Details extends AppCompatActivity {
     private Button AddCart;
     private Button Back;
     float newprice,unitprice;
-    int quantity=0;
+    int itemsquantity=0;
     String pname;
 
 
@@ -47,15 +47,14 @@ public class Details extends AppCompatActivity {
 
         ImageView image=(ImageView) findViewById(R.id.ivimg);
         Picasso.get().load(intent.getStringExtra("imgurl")).into(image);
-        System.out.println(intent.getStringExtra("imgurl"));
 
        Amount.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
-               quantity=Integer.parseInt(Amount.getText().toString());
+               itemsquantity=Integer.parseInt(Amount.getText().toString());
                    Intent intent = getIntent();
                    unitprice = intent.getFloatExtra("price",0);
-                   newprice=quantity*unitprice;
+                   newprice=itemsquantity*unitprice;
                    TextView newpri = (TextView) findViewById(R.id.tvnewpris);
                    newpri.setText("Total Price:Rs."+newprice);
            }
@@ -64,7 +63,7 @@ public class Details extends AppCompatActivity {
        AddCart.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
-            if(quantity!=0){
+            if(itemsquantity!=0){
                addToCart();
             }else{
                 Toast.makeText(Details.this,"Enter quantity value...", Toast.LENGTH_SHORT).show();
@@ -80,7 +79,7 @@ public class Details extends AppCompatActivity {
     }
 
     public void addToCart() {
-        String url ="http://192.168.8.179:8080/demo/addCart?pname="+ pname +"&quantity="+ quantity +"&fprice="+ newprice;
+        String url ="http://192.168.137.1:8080/demo/addCart?pname="+ pname +"&quantity="+ itemsquantity +"&fprice="+ newprice;
         RequestQueue requestQueue = Volley.newRequestQueue(Details.this);
         StringRequest stringRequest = new StringRequest(
                 Request.Method.GET
@@ -91,18 +90,18 @@ public class Details extends AppCompatActivity {
         requestQueue.add(stringRequest);
         startActivity(new Intent(Details.this, PaymentMethod.class));
     }
-}
+
      class HTTPResponseListner implements Response.Listener<String>{
         @Override
         public void onResponse(String response){
-            System.out.println("Data "+response+"....");
-           // Toast.makeText(Details.this,"Successfully added to cart", Toast.LENGTH_SHORT).show();
+            Toast.makeText(Details.this,"Successfully added to cart", Toast.LENGTH_SHORT).show();
         }
     }
 
     class HTTPErrorListner implements Response.ErrorListener {
         @Override
         public void onErrorResponse(VolleyError error) {
-            System.out.println("Error....");
+            Toast.makeText(Details.this,"Failed to add data to cart", Toast.LENGTH_SHORT).show();
         }
     }
+}
