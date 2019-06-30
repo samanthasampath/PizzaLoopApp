@@ -58,7 +58,7 @@ public class FoodList extends AppCompatActivity {
             }
         });
         RequestQueue queue = Volley.newRequestQueue(this);
-        String url ="http://192.168.8.179:8080/demo/all";
+        String url ="http://192.168.137.1:8080/demo/all";
 
         JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, url,
                 null, new HTTPResponseListner(), new HTTPErrorListner());

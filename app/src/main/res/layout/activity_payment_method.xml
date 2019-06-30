@@ -1,9 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@mipmap/backnewl"
     tools:context=".PaymentMethod">
 
-</android.support.constraint.ConstraintLayout>
+    <ImageView
+    android:id="@+id/imglogo"
+    android:layout_width="120dp"
+    android:layout_height="120dp"
+    app:srcCompat="@mipmap/logonew"
+    android:layout_marginTop="25dp"
+    android:layout_centerHorizontal="true"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:layout_below="@id/imglogo"
+        android:id="@+id/lout"
+        android:gravity="center"
+        android:layout_margin="20dp"
+        android:background="#D49797">
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Please view your orders before complete the payment"
+        android:visibility="visible"
+        android:textSize="18dp"
+        android:textColor="#000000"
+        android:gravity="center"
+        android:fontFamily="casual"
+        android:textStyle="bold"/>
+
+    <Button
+        android:id="@+id/btnViewCart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_background"
+        android:text="View my orders"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true"
+        android:padding="10dp"/>
+
+        <TextView
+            android:id="@+id/textMethod"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select payment method now.."
+            android:visibility="visible"
+            android:textSize="18dp"
+            android:textColor="#000000"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:fontFamily="casual"
+            android:textStyle="bold"/>
+
+    <RadioGroup
+        android:id="@+id/rgMethod"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignLeft="@id/tvdes">
+
+        <RadioButton
+            android:id="@+id/rbtnCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignLeft="@id/tvdes"
+            android:text="Pay By Card"
+            android:fontFamily="sans-serif"
+            android:visibility="visible"
+            android:textSize="20dp"/>
+
+        <RadioButton
+            android:id="@+id/rbtnCash"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/tvdes"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"
+            android:text="Cash On Delivery"
+            android:fontFamily="sans-serif"
+            android:visibility="visible"
+            android:textSize="20dp"/>
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnSubmit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_background"
+        android:text="Submit"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true"
+        android:padding="10dp"/>
+    </LinearLayout>
+
+</RelativeLayout>
