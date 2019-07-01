@@ -64,7 +64,7 @@ public class Details extends AppCompatActivity {
            @Override
            public void onClick(View v) {
             if(itemsquantity!=0){
-               addToCart();
+               addToFoodCart();
             }else{
                 Toast.makeText(Details.this,"Enter quantity value...", Toast.LENGTH_SHORT).show();
             }
@@ -78,17 +78,14 @@ public class Details extends AppCompatActivity {
        });
     }
 
-    public void addToCart() {
-        String url ="http://192.168.137.1:8080/demo/addCart?pname="+ pname +"&quantity="+ itemsquantity +"&fprice="+ newprice;
+    public void addToFoodCart() {
+        String url ="http://192.168.137.1:8080/demo/addCart?pname="+ pname +"&quantity="+ itemsquantity +"&nprice="+ newprice;
         RequestQueue requestQueue = Volley.newRequestQueue(Details.this);
         StringRequest stringRequest = new StringRequest(
-                Request.Method.GET
-                ,url
-                ,new HTTPResponseListner(),
-                new HTTPErrorListner()
+                Request.Method.GET,url,new HTTPResponseListner(), new HTTPErrorListner()
         );
         requestQueue.add(stringRequest);
-        startActivity(new Intent(Details.this, PaymentMethod.class));
+        startActivity(new Intent(Details.this, CartView.class));
     }
 
      class HTTPResponseListner implements Response.Listener<String>{

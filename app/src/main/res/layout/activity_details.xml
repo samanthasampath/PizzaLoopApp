@@ -9,11 +9,12 @@
 
     <ImageView
         android:id="@+id/ivimg"
-        android:layout_width="207dp"
-        android:layout_height="176dp"
+        android:layout_width="300dp"
+        android:layout_height="210dp"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="10dp"
+        android:padding="1dp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -23,7 +24,7 @@
         android:gravity="center"
         android:id="@+id/layout"
         android:padding="10dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
         android:background="@drawable/rounded_background">

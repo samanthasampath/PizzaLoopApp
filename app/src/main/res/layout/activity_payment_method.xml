@@ -29,7 +29,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Please view your orders before complete the payment"
+        android:text="you can REVIEW orders before complete the payment"
         android:visibility="visible"
         android:textSize="18dp"
         android:textColor="#000000"

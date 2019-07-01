@@ -51,7 +51,7 @@ public class PaymentMethod extends AppCompatActivity {
                     Toast.makeText(PaymentMethod.this," Card payment option selected", Toast.LENGTH_SHORT).show();
                 }
                 else if(count==2){
-                    startActivity(new Intent(PaymentMethod.this, Confirmation.class));
+                    startActivity(new Intent(PaymentMethod.this, MapDirection.class));
                     Toast.makeText(PaymentMethod.this," Cash on Delivery payment option selected", Toast.LENGTH_SHORT).show();
                 }else{
                     Toast.makeText(PaymentMethod.this,"Please Select a method", Toast.LENGTH_SHORT).show();
