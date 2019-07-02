@@ -52,11 +52,11 @@ public class Details extends AppCompatActivity {
            @Override
            public void onClick(View v) {
                itemsquantity=Integer.parseInt(Amount.getText().toString());
-                   Intent intent = getIntent();
-                   unitprice = intent.getFloatExtra("price",0);
-                   newprice=itemsquantity*unitprice;
-                   TextView newpri = (TextView) findViewById(R.id.tvnewpris);
-                   newpri.setText("Total Price:Rs."+newprice);
+               Intent intent = getIntent();
+               unitprice = intent.getFloatExtra("price",0);
+               newprice=itemsquantity*unitprice;
+               TextView newpri = (TextView) findViewById(R.id.tvnewpris);
+               newpri.setText("Total Price:Rs."+newprice);
            }
        });
 
