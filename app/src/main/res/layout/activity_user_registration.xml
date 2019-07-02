@@ -89,7 +89,9 @@
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
         android:text="Already sign up?Log in..."
-        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:padding="10dp"
+        android:fontFamily="sans-serif-black"
+        android:textStyle="italic"
         android:layout_centerInParent="true"
         android:layout_marginTop="30dp"
         android:layout_below="@id/btnreg"/>

@@ -15,7 +15,6 @@ public class UserRegistration extends AppCompatActivity {
         setContentView(R.layout.activity_user_registration);
         Home =  (TextView)findViewById(R.id.tvsign);
 
-
         Home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

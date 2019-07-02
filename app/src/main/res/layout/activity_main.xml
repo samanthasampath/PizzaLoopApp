@@ -13,7 +13,7 @@
         android:layout_height="176dp"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="30dp"
         app:srcCompat="@mipmap/logonew" />
 
     <EditText
@@ -23,7 +23,7 @@
         android:ems="10"
         android:hint="User Name*"
         android:inputType="textPersonName"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="30dp"
         android:layout_centerInParent="true"
         android:layout_below="@id/imglogo"
         android:background="@drawable/rounded_background"
@@ -58,7 +58,9 @@
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
         android:text="New User? Sign Up..."
-        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:padding="10dp"
+        android:fontFamily="sans-serif-black"
+        android:textStyle="italic"
         android:layout_centerInParent="true"
         android:layout_marginTop="30dp"
         android:layout_below="@id/btnsignin"/>

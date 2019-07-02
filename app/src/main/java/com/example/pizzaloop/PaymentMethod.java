@@ -27,7 +27,6 @@ public class PaymentMethod extends AppCompatActivity {
         method=findViewById(R.id.rgMethod);
         viewCart=findViewById(R.id.btnViewCart);
 
-
         method.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
         {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
@@ -56,7 +55,6 @@ public class PaymentMethod extends AppCompatActivity {
                 }else{
                     Toast.makeText(PaymentMethod.this,"Please Select a method", Toast.LENGTH_SHORT).show();
                 }
-
             }
         });
 
@@ -66,7 +64,5 @@ public class PaymentMethod extends AppCompatActivity {
                 startActivity(new Intent(PaymentMethod.this, CartView.class));
             }
         });
-
-
     }
 }

@@ -38,9 +38,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
-
-
     public void loadData(String Name,String Password){
         if(Name.equals("a") && Password.equals("1")){
             Toast.makeText(MainActivity.this,"Username and password is correct", Toast.LENGTH_SHORT).show();

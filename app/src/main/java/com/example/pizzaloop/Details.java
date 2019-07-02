@@ -40,8 +40,10 @@ public class Details extends AppCompatActivity {
         TextView name = (TextView) findViewById(R.id.tvname);
         pname=intent.getStringExtra("name");
         name.setText(pname);
+
         TextView details = (TextView) findViewById(R.id.tvdes);
         details.setText(intent.getStringExtra("details"));
+
         TextView price = (TextView) findViewById(R.id.tvpris);
         price.setText("Unit Price:Rs."+intent.getFloatExtra("price",0) );
 
@@ -51,8 +53,8 @@ public class Details extends AppCompatActivity {
        Amount.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
-               itemsquantity=Integer.parseInt(Amount.getText().toString());
                Intent intent = getIntent();
+               itemsquantity=Integer.parseInt(Amount.getText().toString());
                unitprice = intent.getFloatExtra("price",0);
                newprice=itemsquantity*unitprice;
                TextView newpri = (TextView) findViewById(R.id.tvnewpris);
